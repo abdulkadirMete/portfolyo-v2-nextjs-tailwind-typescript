@@ -1,6 +1,7 @@
 import { useState, useEffect, FunctionComponent } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import path from "path";
 
 const NavItem: FunctionComponent<{
   active: string;
@@ -32,7 +33,7 @@ const Navbar = () => {
     if (pathname === "/") setActive("About");
     else if (pathname === "/projects") setActive("Projects");
     else if (pathname === "/resume") setActive("Resume");
-  }, []);
+  }, [pathname]);
 
   return (
     <div className="my-3 flex items-center justify-between px-5 py-3">
